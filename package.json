@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "crypto": "^1.0.1",
-    "crypto-ts": "^1.0.2"
+    "crypto-ts": "^1.0.2",
+    "express": "^4.21.1"
   }
 }
