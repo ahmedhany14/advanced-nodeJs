@@ -17,7 +17,9 @@ module.exports = app => {
       if (!user) {
         return res.status(400).send({ error: 'Invalid email or password' });
       }
-      req.user = user;
+      req.session = {
+        user
+      };
       res.status(200).send(user);
     }
   );
