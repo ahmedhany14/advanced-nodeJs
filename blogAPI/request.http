@@ -1,0 +1,33 @@
+### login
+
+POST http://localhost:3000/login
+content-type: application/json
+
+{
+    "email": "ahmed",
+    "password": "123456"
+}
+
+### register
+
+POST http://localhost:3000/register
+content-type: application/json
+
+{
+    "email": "ahmed",
+    "password": "123456"
+}
+
+### get all posts
+
+GET http://localhost:3000/api/blogs
+
+
+### Create new post
+POST http://localhost:3000/api/blogs
+content-type: application/json
+
+{
+    "title": "mesh new bolg",
+    "content": "test cache"
+}

@@ -10,10 +10,13 @@ dotenv.config({
 
 require('./models/User');
 require('./models/Blog');
+require('./service/cache')
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI, {});
+    mongoose.Promise = global.Promise;
+    await mongoose.connect(process.env.MONGO_URI, {
+    });
     console.log('Database connected successfully')
   } catch (err) {
     console.log(err);
