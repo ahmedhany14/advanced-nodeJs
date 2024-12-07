@@ -33,7 +33,7 @@ module.exports = app => {
     }));
 
     try {
-      //await blog.save();
+      await blog.save();
       clearCache(key);
       res.send(blog);
     } catch (err) {

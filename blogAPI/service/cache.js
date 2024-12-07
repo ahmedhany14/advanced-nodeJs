@@ -25,7 +25,10 @@ mongoose.Query.prototype.exec = async function () {
 
     console.log('Cache Missed');
     const queryResult = await exec.apply(this, arguments);
-    await client.set(key, JSON.stringify(queryResult)); // set the value in cache
+
+    // set the cache expiration time to .5 minutes
+    const cacheExpiration = 5;
+    client.set(key, JSON.stringify(queryResult), 'EX', cacheExpiration); // set the value in cache
 
     return queryResult// return the value
 }
